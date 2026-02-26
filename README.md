@@ -34,29 +34,6 @@ kubectl
 
 YAML
 
-📂 Project Structure
-.
-├── deployment.yml
-📦 Deployment YAML
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: nginx-deployment
-spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: nginx
-  template:
-    metadata:
-      labels:
-        app: nginx
-    spec:
-      containers:
-        - name: nginx
-          image: nginx:1.25
-          ports:
-            - containerPort: 80
 🚀 How to Run
 1️⃣ Start Minikube
 minikube start --driver=docker
@@ -72,7 +49,8 @@ kubectl describe deployment nginx-deployment
 To scale replicas:
 
 kubectl scale deployment nginx-deployment --replicas=5
-🔍 Key Learnings
+
+🔍 Key Learnings:
 
 Importance of correct YAML indentation
 
