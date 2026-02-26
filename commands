@@ -1,0 +1,22 @@
+Today I completed a practical Kubernetes deployment and explored core workload management commands.
+
+🔧 Commands I worked with:
+
+• minikube start – Initialized the local Kubernetes cluster
+• minikube version – Verified installation
+• kubectl version – Validated client-cluster connectivity
+
+📦 Deployment Management:
+• kubectl apply -f deployment.yml – Deployed application using declarative configuration
+• vim deployment.yml – Modified deployment configuration
+
+📊 Monitoring & Debugging:
+• kubectl get deployments – Checked deployment status
+• kubectl get pods – Verified pod health
+• kubectl get pods -o wide – Viewed node placement & IP details
+• kubectl get pods -w – Watched rollout in real time
+• kubectl describe deployment <name> – Inspected rollout conditions
+• kubectl describe pod <name> – Debugged pod-level events
+
+🗑 Testing Self-Healing:
+• kubectl delete pod <name> – Observed automatic pod recreation via Deployment
