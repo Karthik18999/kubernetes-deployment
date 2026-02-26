@@ -1,80 +1,84 @@
-🚀 Kubernetes Nginx Deployment (Minikube)
+Kubernetes Nginx Deployment using Minikube
+Overview
 
-This project demonstrates a hands-on Kubernetes deployment using Minikube and Docker driver. It includes creating a Deployment, managing replicas, and applying declarative configuration using YAML.
+This project demonstrates the deployment of a containerized Nginx application on a Kubernetes cluster using Minikube with the Docker driver. The objective was to understand core Kubernetes workload management concepts including Deployments, replica management, and declarative configuration.
 
-📌 Project Overview
+The project follows Kubernetes best practices by using YAML-based manifests and a declarative deployment model.
 
-In this project:
+Architecture
 
-Minikube cluster was created using Docker driver
+Local Kubernetes Cluster: Minikube
 
-Deployment YAML was written manually
+Container Runtime: Docker
 
-Nginx container deployed with multiple replicas
+Workload Type: Deployment
 
-Resources configured with CPU and memory limits
+Application: Nginx (multi-replica)
 
-Deployment applied using kubectl apply
+Configuration Management: Declarative YAML
 
-Rolling update mechanism verified
+The Deployment ensures high availability by maintaining multiple replicas of the Nginx pod.
 
-YAML structure and indentation issues debugged
+Features Implemented
 
-This project focuses on understanding Kubernetes fundamentals through practical implementation.
+Cluster initialization using Minikube
 
-🛠 Tech Stack
+Deployment creation using apps/v1
 
-Kubernetes (v1.35.x)
+Replica configuration for high availability
 
-Minikube
+Label selectors and pod template configuration
 
-Docker
+Container port exposure
 
-kubectl
+Rolling update capability
 
-YAML
+Resource verification using kubectl commands
 
-🚀 How to Run
-1️⃣ Start Minikube
+Project Structure
+.
+└── deployment.yml
+
+Setup Instructions
+1. Start Minikube
 minikube start --driver=docker
 minikube update-context
-2️⃣ Apply Deployment
+2. Deploy Application
 kubectl apply -f deployment.yml
-3️⃣ Verify
+3. Verify Deployment
 kubectl get deployments
 kubectl get pods
 kubectl describe deployment nginx-deployment
-🔄 Scaling
-
-To scale replicas:
-
+Scaling the Deployment
 kubectl scale deployment nginx-deployment --replicas=5
 
-🔍 Key Learnings:
+Kubernetes automatically manages pod creation and ensures the desired state is maintained.
 
-Importance of correct YAML indentation
+Key Learnings
 
-Difference between kubectl create and kubectl apply
+Importance of YAML structure and indentation in Kubernetes manifests
 
-How Kubernetes manages replicas
+Difference between imperative (create) and declarative (apply) approaches
 
-How kubeconfig context affects kubectl behavior
+Understanding Kubernetes control plane components
 
-Understanding control plane components (kubelet, apiserver)
+ReplicaSet behavior and rolling updates
 
-📈 Next Improvements
+Managing kubeconfig contexts
+
+Future Enhancements
 
 Add Service (ClusterIP / NodePort)
 
-Implement Rolling Updates
+Implement health probes (liveness and readiness)
 
-Add Liveness & Readiness Probes
-
-Deploy using Helm
+Configure resource limits and requests
 
 Integrate with CI/CD pipeline
 
-🧠 Author
+Extend to production-grade architecture
+
+Author
 
 Karthik Chitikela
-Aspiring DevOps & Cloud Engineer
+DevOps & Cloud Engineering Enthusiast
